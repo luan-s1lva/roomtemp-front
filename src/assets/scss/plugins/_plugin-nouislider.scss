@@ -101,13 +101,15 @@
  * Giving the connect element a border radius causes issues with using transform: scale
  */
 .noUi-target {
-  background: #FAFAFA;
+  background: #fafafa;
   border-radius: 4px;
-  border: 1px solid #D3D3D3;
-  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+  border: 1px solid #d3d3d3;
+  box-shadow:
+    inset 0 1px 1px #f0f0f0,
+    0 3px 6px -5px #bbb;
 }
 .noUi-connect {
-  background: #3FB8AF;
+  background: #3fb8af;
 }
 /* Handles and cursors;
  */
@@ -118,14 +120,20 @@
   cursor: ns-resize;
 }
 .noUi-handle {
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   border-radius: 3px;
-  background: #FFF;
+  background: #fff;
   cursor: default;
-  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
+  box-shadow:
+    inset 0 0 1px #fff,
+    inset 0 1px 7px #ebebeb,
+    0 3px 6px -3px #bbb;
 }
 .noUi-active {
-  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+  box-shadow:
+    inset 0 0 1px #fff,
+    inset 0 1px 7px #ddd,
+    0 3px 6px -3px #bbb;
 }
 /* Handle stripes;
  */
@@ -136,7 +144,7 @@
   position: absolute;
   height: 14px;
   width: 1px;
-  background: #E8E7E6;
+  background: #e8e7e6;
   left: 14px;
   top: 6px;
 }
@@ -156,7 +164,7 @@
 /* Disabled state;
  */
 [disabled] .noUi-connect {
-  background: #B8B8B8;
+  background: #b8b8b8;
 }
 [disabled].noUi-target,
 [disabled].noUi-handle,
@@ -192,13 +200,13 @@
  */
 .noUi-marker {
   position: absolute;
-  background: #CCC;
+  background: #ccc;
 }
 .noUi-marker-sub {
-  background: #AAA;
+  background: #aaa;
 }
 .noUi-marker-large {
-  background: #AAA;
+  background: #aaa;
 }
 /* Horizontal layout;
  *
@@ -261,7 +269,7 @@
 .noUi-tooltip {
   display: block;
   position: absolute;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   border-radius: 3px;
   background: #fff;
   color: #000;
@@ -297,49 +305,51 @@
 // Creative Tim Changes
 
 .noUi-horizontal {
-	height: 2px;
+  height: 2px;
 }
 
 .noUi-horizontal .noUi-handle {
-	right: -5px;
-	top: -6px
+  right: -5px;
+  top: -6px;
 }
 
 .noUi-vertical {
-	width: 18px
+  width: 18px;
 }
 .noUi-vertical .noUi-handle {
-	right: -6px;
-	top: -17px
+  right: -6px;
+  top: -17px;
 }
 
 .noUi-handle:before,
 .noUi-handle:after {
-	content: none;
+  content: none;
 }
 .noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
-	left: -17px;
-	right: auto
+  left: -17px;
+  right: auto;
 }
 
 .noUi-target {
-	background: #D3D3D3;
-	border-radius: 4px;
-	box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB
+  background: #d3d3d3;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 1px 1px #f0f0f0,
+    0 3px 6px -5px #bbb;
 }
 
 .noUi-connects {
   height: 2px;
   margin-top: -1px;
-	border-radius: 3px
+  border-radius: 3px;
 }
 
 .noUi-draggable {
-	cursor: ew-resize
+  cursor: ew-resize;
 }
 
 .noUi-vertical .noUi-draggable {
-	cursor: ns-resize
+  cursor: ns-resize;
 }
 
 .noUi-handle {
@@ -349,20 +359,26 @@
   top: -6px;
   cursor: pointer;
   border-radius: 100%;
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   border: 1px solid;
   background: #fff;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
   border-color: #9c27b0;
 }
 
 .noUi-active {
-	box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB
+  box-shadow:
+    inset 0 0 1px #fff,
+    inset 0 1px 7px #ddd,
+    0 3px 6px -3px #bbb;
 }
 
 .noUi-handle:after {
-	left: 17px
+  left: 17px;
 }
 
 .noUi-tooltip {
@@ -377,22 +393,22 @@
 // Colors
 
 .slider.slider-info .noUi-handle {
-    border-color: $cyan-500;
+  border-color: $cyan-500;
 }
 
 .slider.slider-success .noUi-handle {
-    border-color: $green-500;
+  border-color: $green-500;
 }
 
 .slider.slider-danger .noUi-handle {
-    border-color: $red-500;
+  border-color: $red-500;
 }
 
 .slider.slider-warning .noUi-handle {
-    border-color: $orange-500;
+  border-color: $orange-500;
 }
 
-.slider.slider-info .noUi-connect{
+.slider.slider-info .noUi-connect {
   background: $cyan-500;
 }
 

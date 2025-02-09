@@ -1,19 +1,66 @@
 <div class="main-content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4" *ngFor="let item of temperaturesData">
-          <div class="card card-stats">
-            <div class="card-header card-header-warning card-header-icon">
-              <div class="card-icon">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thermostat"></mat-icon>
-              </div>
-              <h3 class="card-title">Room: {{item._id}}</h3>
-              <h3 class="card-category">Temperature: {{item.temperaturaCelsius}}ºC</h3>
-              <h3 class="card-category">Lights: {{item.isLightOn}}</h3>
-              <h3 class="card-category">Air Conditioner: {{item.isACOn}}</h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div
+        class="col-md-4"
+        *ngFor="let item of temperaturesData; let i = index"
+      >
+        <div class="card card-stats">
+          <div class="card-header card-header-warning card-header-icon">
+            <div class="card-icon">
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="thermostat"
+              ></mat-icon>
             </div>
+            <h3 class="card-title">Room: {{ item._id }}</h3>
+            <h3 class="card-category">
+              Temperature: {{ item.temperaturaCelsius }}ºC
+            </h3>
+            <!-- <h3 class="card-category">Lights: {{item.isLightOn}}</h3>
+              <h3 class="card-category">Air Conditioner: {{item.isACOn}}</h3> -->
+            <form [formGroup]="getRoomForm(i)" (change)="handleRoomControls(i)">
+              <fieldset>
+                <legend>
+                  <strong>Controles de sala</strong>
+                </legend>
+                <div class="col">
+                  <label for="">Lights</label>
+                  <select
+                    formControlName="isLightOn"
+                    [ngModel]="item.isLightOn"
+                    id="isLightOn"
+                  >
+                    <option value="{{ true }}">On</option>
+                    <option value="{{ false }}">Off</option>
+                  </select>
+
+                  <br />
+
+                  <label for="">Air Conditioner</label>
+                  <select
+                    formControlName="isACOn"
+                    [ngModel]="item.isACOn"
+                    id="isACOn"
+                  >
+                    <option value="true">On</option>
+                    <option value="false">Off</option>
+                  </select>
+                </div>
+                <input
+                  matInput
+                  placeholder="Número da sala"
+                  formControlName="_id"
+                  type="hidden"
+                  name="_id"
+                  [ngModel]="item._id"
+                />
+              </fieldset>
+            </form>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>

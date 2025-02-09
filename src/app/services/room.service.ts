@@ -5,19 +5,20 @@ import { Observable } from 'rxjs';
 import { ResponseAPI } from '../interfaces/response-api';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RoomService {
+  private urlAPI: string = environment.endpoint;
 
-  private urlAPI:string = environment.endpoint
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  addRoom(data:ResponseAPI):Observable<ResponseAPI> {
+  addRoom(data: ResponseAPI): Observable<ResponseAPI> {
     return this.http.post<ResponseAPI>(`${this.urlAPI}/add/room`, data);
   }
 
-  removeRoom(_id:number):Observable<ResponseAPI> {
-    return this.http.delete<ResponseAPI>(`${this.urlAPI}/remove/room/?_id=${_id}`);
+  removeRoom(_id: number): Observable<ResponseAPI> {
+    return this.http.delete<ResponseAPI>(
+      `${this.urlAPI}/remove/room/?_id=${_id}`,
+    );
   }
 }

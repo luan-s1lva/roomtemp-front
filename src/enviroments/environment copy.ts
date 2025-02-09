@@ -1,4 +1,4 @@
 export const environment = {
-    production:false,
-    endpoint:"yourendpoint"
-}
+  production: false,
+  endpoint: 'yourendpoint',
+};

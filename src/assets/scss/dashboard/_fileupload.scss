@@ -21,7 +21,7 @@
   display: inline-block;
   margin-bottom: 9px;
 }
-.fileinput .form-control{
+.fileinput .form-control {
   display: inline-block;
   padding-top: 7px;
   padding-bottom: 5px;
@@ -38,10 +38,9 @@
   max-width: 250px;
   @include shadow-big-dash();
 
-
-  &.img-circle{
-      border-radius: 50%;
-      max-width: 100px;
+  &.img-circle {
+    border-radius: 50%;
+    max-width: 100px;
   }
 }
 .fileinput .thumbnail > img {
@@ -111,8 +110,8 @@
 .input-group-addon:not(:first-child) {
   border-left: 0;
 }
-.thumbnail{
-    border: 0 none;
-    border-radius: 4px;
-    padding: 0;
+.thumbnail {
+  border: 0 none;
+  border-radius: 4px;
+  padding: 0;
 }

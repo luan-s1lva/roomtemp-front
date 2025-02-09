@@ -5,15 +5,14 @@ import { Observable } from 'rxjs';
 import { ResponseAPI } from '../interfaces/response-api';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TempService {
+  private urlAPI: string = environment.endpoint;
 
-  private urlAPI:string = environment.endpoint
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient:HttpClient) { }
-
-  returnAllTemps():Observable<ResponseAPI[]>{
-    return this.httpClient.get<ResponseAPI[]>(`${this.urlAPI}/show`)
+  returnAllTemps(): Observable<ResponseAPI[]> {
+    return this.httpClient.get<ResponseAPI[]>(`${this.urlAPI}/show`);
   }
 }

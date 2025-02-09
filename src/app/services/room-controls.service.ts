@@ -5,16 +5,19 @@ import { Observable } from 'rxjs';
 import { RoomControls } from '../interfaces/room-controls';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RoomControlsService {
+  private urlAPI: string = environment.endpoint;
 
-  private urlAPI:string = environment.endpoint
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  updateRoomControls(data:RoomControls):Observable<RoomControls> {
-    const body:RoomControls = { "_id": data._id, "isACOn": data.isACOn, "isLightOn": data.isLightOn };
-    return this.http.put<RoomControls>(`${this.urlAPI}/update/room/`, body)
+  updateRoomControls(data: RoomControls): Observable<RoomControls> {
+    const body: RoomControls = {
+      _id: data._id,
+      isACOn: data.isACOn,
+      isLightOn: data.isLightOn,
+    };
+    return this.http.put<RoomControls>(`${this.urlAPI}/update/room/`, body);
   }
 }

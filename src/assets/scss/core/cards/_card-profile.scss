@@ -1,9 +1,9 @@
-.card-profile{
+.card-profile {
   @extend %common-card-testimonial;
 }
 
-.card-profile{
-  .card-header:not([class*="card-header-"]){
+.card-profile {
+  .card-header:not([class*="card-header-"]) {
     background: transparent;
     box-shadow: none;
   }

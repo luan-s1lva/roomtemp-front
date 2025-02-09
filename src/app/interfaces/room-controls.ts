@@ -1,5 +1,5 @@
 export interface RoomControls {
-    _id:string,
-    isACOn:boolean,
-    isLightOn:boolean
+  _id: string;
+  isACOn: boolean;
+  isLightOn: boolean;
 }
