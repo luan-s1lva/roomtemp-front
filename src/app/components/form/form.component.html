@@ -1,17 +1,53 @@
 <div class="container">
     <div class="row">
-        <strong>Cadastrar/Remover sala</strong>
-        <select value={{action}} id="statusSelect" (change)="updateActionVariable()">
-            <option value="create">Create</option>
-            <option value="remove">Remove</option>
-        </select>
         <form [formGroup]="roomForm" (ngSubmit)="handleBehaviour()">
-            <div class="col">
+            <fieldset>
+                <legend>
+                    <strong>Cadastrar/Remover sala</strong>
+                </legend>
+                <div class="col">
+                    <select value={{action}} id="statusSelect" (change)="updateActionVariable()">
+                        <option value="create">Create</option>
+                        <option value="remove">Remove</option>
+                    </select>
+                </div>
+                <div class="col">
                     <input matInput placeholder="Número da sala" formControlName="_id" />
                     <button mat-flat-button color="primary" type="submit">
                         <mat-icon>send</mat-icon>
                     </button>
                 </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
+        <form [formGroup]="roomcontrolsForm" (ngSubmit)="handleRoomControls()">
+            <fieldset>
+                <legend>
+                    <strong>Controles de sala</strong>
+                </legend>
+                <div class="col">
+                    <select formControlName="isLightOn" id="isLightOn">
+                        <option value={{true}}>On</option>
+                        <option value={{false}}>Off</option>
+                    </select>
+                    <label for="">Lights</label>
+                    
+                    <br>
+
+                    <select formControlName="isACOn" id="isACOn">
+                        <option value="true">On</option>
+                        <option value="false">Off</option>
+                    </select>
+                    <label for="">Air Conditioner</label>
+                </div>
+                <div class="col">
+                    <input matInput placeholder="Número da sala" formControlName="_id" />
+                    <button mat-flat-button color="primary" type="submit">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </div>
+            </fieldset>
         </form>
     </div>
 </div>

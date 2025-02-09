@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { MatIconModule } from '@angular/material/icon';
 import { RoomService } from '../../services/room.service';
 import { ResponseAPI } from '../../interfaces/response-api';
+import { RoomControls } from '../../interfaces/room-controls';
+import { RoomControlsService } from '../../services/room-controls.service';
 
 @Component({
   selector: 'app-form',
@@ -13,12 +15,19 @@ import { ResponseAPI } from '../../interfaces/response-api';
 })
 export class FormComponent {
   roomForm:FormGroup;
+  roomcontrolsForm:FormGroup;
   action:string = "create"
 
-  constructor(private formBuilder:FormBuilder, private roomService:RoomService) {
+  constructor(private formBuilder:FormBuilder, private roomService:RoomService, private roomControlsService:RoomControlsService) {
     this.roomForm = formBuilder.group({
       _id: ['',[Validators.required, Validators.pattern("^[0-9]+$")]]
-    })
+    });
+
+    this.roomcontrolsForm = formBuilder.group({
+      _id: ['',[Validators.required, Validators.pattern("^[0-9]+$")]],
+      isLightOn: [false,Validators.required],
+      isACOn: [false,Validators.required]
+    });
   }
 
   updateActionVariable() {
@@ -27,17 +36,28 @@ export class FormComponent {
     } else {
       this.action = "create"
     }
-
-    console.log(this.action)
   }
 
   handleBehaviour() {
-    console.log(this.action)
     if (this.action == "create") {
       this.addRoom()
     } else {
       this.removeRoom()
     }
+  }
+
+  handleRoomControls() {
+    const roomData:RoomControls = {
+      _id: this.roomcontrolsForm.value._id,
+      isLightOn: this.roomcontrolsForm.value.isLightOn,
+      isACOn: this.roomcontrolsForm.value.isACOn
+    }
+
+    this.roomControlsService.updateRoomControls(roomData).subscribe({
+      next(value) {
+        // console.log(value)
+      },
+    })
   }
 
   addRoom() {
