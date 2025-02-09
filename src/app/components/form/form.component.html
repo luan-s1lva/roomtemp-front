@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <strong>Cadastrar/Remover sala</strong>
+        <select value={{action}} id="statusSelect" (change)="updateActionVariable()">
+            <option value="create">Create</option>
+            <option value="remove">Remove</option>
+        </select>
+        <form [formGroup]="roomForm" (ngSubmit)="handleBehaviour()">
+            <div class="col">
+                    <input matInput placeholder="Número da sala" formControlName="_id" />
+                    <button mat-flat-button color="primary" type="submit">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </div>
+        </form>
+    </div>
+</div>

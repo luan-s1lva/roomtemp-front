@@ -1,4 +1,6 @@
 export interface ResponseAPI {
-    idSala:string,
+    _id:string,
     temperaturaCelsius:string
+    isACOn:boolean,
+    isLightOn:boolean
 }

@@ -6,13 +6,14 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
+import { FormComponent } from '../form/form.component';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule.forChild(DashboardRoutes),
         FormsModule,
-        MatIconModule
+        MatIconModule,
     ],
     declarations: []
 })

@@ -1,14 +1,16 @@
 <div class="main-content">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of temperaturesData">
+        <div class="col-md-4" *ngFor="let item of temperaturesData">
           <div class="card card-stats">
             <div class="card-header card-header-warning card-header-icon">
               <div class="card-icon">
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thermostat"></mat-icon>
               </div>
-              <h3 class="card-title">Sala Nº {{item.idSala}}</h3>
-              <h3 class="card-category">Temperatura: {{item.temperaturaCelsius}}ºC</h3>
+              <h3 class="card-title">Room: {{item._id}}</h3>
+              <h3 class="card-category">Temperature: {{item.temperaturaCelsius}}ºC</h3>
+              <h3 class="card-category">Lights: {{item.isLightOn}}</h3>
+              <h3 class="card-category">Air Conditioner: {{item.isACOn}}</h3>
             </div>
           </div>
         </div>
