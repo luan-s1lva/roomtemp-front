@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
 
   handleRoomControls(index: number) {
     const roomData = this.getRoomForm(index).value;
+
     this.roomControlsService.updateRoomControls(roomData).subscribe({
       next(value) {
         // console.log(value)

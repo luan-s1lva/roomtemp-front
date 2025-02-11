@@ -9,13 +9,18 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { RoomService } from '../../services/room.service';
 import { ResponseAPI } from '../../interfaces/response-api';
-import { RoomControls } from '../../interfaces/room-controls';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RoomControlsService } from '../../services/room-controls.service';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatIconModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatSlideToggleModule,
+  ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })

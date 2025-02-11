@@ -1,1 +1,14 @@
-<router-outlet /> <app-main></app-main>
+<mat-toolbar>
+    <div class="col-md-6">
+        <strong>Central Control Room</strong>
+    </div>
+    <div class="col-md-6" style="display: flex; justify-content: end;">
+        <a href="/" mat-icon-button style="margin-left: 10px; margin-right: 10px;">
+            <mat-icon>home</mat-icon>
+          </a>
+          <a href="/author" mat-icon-button>
+            <mat-icon>person</mat-icon>
+          </a>
+    </div>
+</mat-toolbar>
+<router-outlet />

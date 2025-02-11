@@ -1,19 +1,14 @@
-<div class="container">
+<div class="container-fluid card">
   <div class="row">
-    <form [formGroup]="roomForm" (ngSubmit)="handleBehaviour()">
-      <fieldset>
+    <fieldset>
+      <form [formGroup]="roomForm" (ngSubmit)="handleBehaviour()">
         <legend>
-          <strong>Cadastrar/Remover sala</strong>
+          <strong>Administração de salas</strong>
         </legend>
-        <div class="col">
-          <select
-            value="{{ action }}"
-            id="statusSelect"
-            (change)="updateActionVariable()"
-          >
-            <option value="create">Create</option>
-            <option value="remove">Remove</option>
-          </select>
+        <div class="col" style="display: flex; justify-content: center">
+          <mat-slide-toggle id="statusSelect" (change)="updateActionVariable()">
+            {{ action === "create" ? "Criar sala" : "Destruir sala" }}
+          </mat-slide-toggle>
         </div>
         <div class="col">
           <input matInput placeholder="Número da sala" formControlName="_id" />
@@ -21,7 +16,7 @@
             <mat-icon>send</mat-icon>
           </button>
         </div>
-      </fieldset>
-    </form>
+      </form>
+    </fieldset>
   </div>
 </div>

@@ -1,0 +1,14 @@
+.row {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+legend {
+  padding: 3px 6px;
+}
+
+input,
+#statusSelect {
+  margin: 0.4rem;
+}
