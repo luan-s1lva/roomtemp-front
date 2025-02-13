@@ -10,7 +10,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { RoomService } from '../../services/room.service';
 import { ResponseAPI } from '../../interfaces/response-api';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { RoomControlsService } from '../../services/room-controls.service';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-form',
@@ -20,6 +24,9 @@ import { RoomControlsService } from '../../services/room-controls.service';
     ReactiveFormsModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',

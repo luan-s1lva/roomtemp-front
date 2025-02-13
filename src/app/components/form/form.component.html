@@ -11,8 +11,12 @@
           </mat-slide-toggle>
         </div>
         <div class="col">
-          <input matInput placeholder="Número da sala" formControlName="_id" />
-          <button mat-flat-button color="primary" type="submit">
+          <mat-form-field>
+            <input matInput placeholder="Número da sala" formControlName="_id" />
+          </mat-form-field>
+        </div>
+        <div style="display: flex;justify-content: center;">
+          <button mat-fab color="primary" type="submit">
             <mat-icon>send</mat-icon>
           </button>
         </div>
